@@ -16,11 +16,22 @@ export const site = {
     googlePlay: null as string | null,
   },
   links: {
-    terms: null as string | null,
-    privacy: null as string | null,
-    contact: null as string | null,
+    terms: "/conditions" as string | null,
+    privacy: "/confidentialite" as string | null,
+    contact: "mailto:kodakian@studiolamarck.fr" as string | null,
     studio: null as string | null,
   },
+  // Éditeur de l'app et du site, repris dans les pages légales.
+  publisher: {
+    name: "Studio Lamarck",
+    legalForm: "association déclarée régie par la loi du 1er juillet 1901",
+    rna: "W751284906",
+    siren: "106 993 579",
+    address: "70, rue Damrémont, 75018 Paris, France",
+    email: "kodakian@studiolamarck.fr",
+  },
+  // Dernière mise à jour des conditions et de la politique de confidentialité.
+  legalUpdatedAt: "11 octobre 2026",
 };
 
 export const storesAvailable = Boolean(site.stores.appStore || site.stores.googlePlay);

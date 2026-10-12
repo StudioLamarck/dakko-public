@@ -21,10 +21,22 @@ Tout se règle dans [`lib/site.ts`](lib/site.ts) :
   les textes repassent en « Télécharger ».
 - `links.terms`, `links.privacy`, `links.contact`, `links.studio` : liens du pied de page et
   « Écris-nous » de la FAQ, affichés sans lien tant qu'ils valent `null`.
+- `publisher` et `legalUpdatedAt` : identité de l'éditeur et date de mise à jour, reprises dans
+  les pages légales.
+
+## Pages légales
+
+- `/conditions` : conditions générales d'utilisation ([`app/conditions/page.tsx`](app/conditions/page.tsx)).
+- `/confidentialite` : politique de confidentialité ([`app/confidentialite/page.tsx`](app/confidentialite/page.tsx)).
+  La section `#droits` décrit la suppression du compte, y compris sans l'app (exigence Google Play).
+
+Le texte de chaque page est rédigé dans son fichier, section par section ; la mise en page commune est
+dans [`components/LegalPage.tsx`](components/LegalPage.tsx). Après une modification de fond, changer
+`legalUpdatedAt`.
 
 ## Structure
 
-- `app/` : mise en page, page d'accueil, icônes et image Open Graph générées au build.
+- `app/` : mise en page, page d'accueil, pages légales, icônes et image Open Graph générées au build.
 - `components/` : une section par fichier (`Hero`, `Stats`, `Steps`, `Reveal`, `FilmLook`,
   `Occasions`, `Faq`, `Download`, `Footer`), chacune avec son module CSS.
 - Les couleurs et polices sont définies dans `app/globals.css`.

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AppIcon } from "./Logo";
 import { site } from "@/lib/site";
 import styles from "./Footer.module.css";
@@ -19,13 +20,17 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <a href="#" aria-label="Kodakian, accueil" className={styles.brand}>
+      <Link href="/" aria-label="Kodakian, accueil" className={styles.brand}>
         <AppIcon size={32} className={styles.icon} />
         <span className={styles.name}>Kodakian</span>
-      </a>
+      </Link>
       <nav aria-label="Liens légaux" className={styles.legal}>
         {legal.map((l) =>
-          l.href ? (
+          l.href?.startsWith("/") ? (
+            <Link key={l.label} href={l.href}>
+              {l.label}
+            </Link>
+          ) : l.href ? (
             <a key={l.label} href={l.href}>
               {l.label}
             </a>
