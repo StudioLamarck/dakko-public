@@ -5,6 +5,7 @@ import Steps from "@/components/Steps";
 import Reveal from "@/components/Reveal";
 import FilmLook from "@/components/FilmLook";
 import Occasions from "@/components/Occasions";
+import Safety from "@/components/Safety";
 import Faq from "@/components/Faq";
 import Download from "@/components/Download";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
         <Reveal />
         <FilmLook />
         <Occasions />
+        <Safety />
         <Faq />
         <Download />
       </main>
